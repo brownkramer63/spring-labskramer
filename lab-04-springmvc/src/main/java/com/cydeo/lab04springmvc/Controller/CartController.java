@@ -3,7 +3,10 @@ package com.cydeo.lab04springmvc.Controller;
 import com.cydeo.lab04springmvc.service.CartService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.UUID;
 
 @Controller
 public class CartController {
@@ -22,6 +25,16 @@ public class CartController {
         model.addAttribute("cartList",cartService.retrieveCartList());
 
         return "cart/cart-list";
+    }
+
+    //2nd request
+    @RequestMapping("/cart-list/{cartId}")
+    public String retrieveListOfCartItems(@PathVariable UUID cartId, Model model){
+
+        model.addAttribute("cartItemList",cartService.retrieveCartDetail(cartId));
+
+
+        return "cart/cart-detail";
     }
 
 }

@@ -21,6 +21,8 @@ public class Product extends BaseEntity {
     private int quantity;
     private int remaining_quantity;
     @OneToMany
-    private List<Category> category;
+    private List<Category> categorys;
+    @OneToMany
+    private List<Cart> carts;
 
 }

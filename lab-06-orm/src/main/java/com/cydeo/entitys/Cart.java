@@ -21,4 +21,8 @@ public class Cart extends BaseEntity{
     private List<Product> products;
     @ManyToOne
     private Customer customer;
+    @ManyToOne
+    private Discount discount;
+    @OneToOne
+    private Orders orders;
 }

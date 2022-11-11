@@ -5,7 +5,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.util.List;
 
 @Getter
 @Setter
@@ -18,5 +21,13 @@ public class Customer extends BaseEntity{
     private String first_name;
     private String last_name;
     private String user_name;
+    @OneToOne
+    private Balance balance;
+    @OneToMany
+    private List<Address> addresses;
+    @OneToMany
+    private List<Orders> orders;
+    @OneToMany
+    private List<Cart> carts;
 
 }

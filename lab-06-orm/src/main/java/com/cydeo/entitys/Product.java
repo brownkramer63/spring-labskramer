@@ -4,10 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Getter
@@ -20,9 +17,13 @@ public class Product extends BaseEntity {
     private double price; //potential bug
     private int quantity;
     private int remaining_quantity;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name="product_category_rel",
+            joinColumns = @JoinColumn(name="p_id"),
+            inverseJoinColumns = @JoinColumn(name="c_id"))
+    private List<Category> category;
+
     @OneToMany
-    private List<Category> categories;
-    @OneToMany
-    private List<Cart> carts;
+    private List<CartItem> cartItems;
 
 }

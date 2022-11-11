@@ -18,7 +18,7 @@ public class Cart extends BaseEntity{
     @Enumerated(EnumType.STRING)
     private CartState cartState;
     @OneToMany
-    private List<Product> products;
+    private List<CartItem> cartItems;
     @ManyToOne
     private Customer customer;
     @ManyToOne

@@ -1,23 +1,25 @@
 package com.cydeo.entitys;
 
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "balance")
+@Table(name = "cart_item")
 @Entity
+public class CartItem extends BaseEntity{
+    private int quantity;
+    @ManyToOne
+    private Product product;
+    @ManyToOne
+    private Cart cart;
 
-public class Balance extends BaseEntity{
-    private double amount;
-    @OneToOne
-    private Customer customer;
+
 
 }

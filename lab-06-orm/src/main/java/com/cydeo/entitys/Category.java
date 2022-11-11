@@ -19,6 +19,8 @@ import java.util.List;
 @Entity
 public class Category extends BaseEntity{
     private String name;
-    @OneToMany
-    private List<Product> products;
+//    @OneToMany
+//    private List<Product> products;
+    //using join table soley in product class
+
 }

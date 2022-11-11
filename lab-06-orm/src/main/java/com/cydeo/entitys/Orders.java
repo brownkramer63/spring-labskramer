@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Getter
@@ -14,8 +15,8 @@ import java.util.List;
 @Table(name = "orders")
 @Entity
 public class Orders extends BaseEntity {
-    private int paid_price;
-    private int total_price;
+    private BigDecimal paid_price;
+    private BigDecimal total_price;
     @ManyToOne
     private Customer customer;
     @OneToOne

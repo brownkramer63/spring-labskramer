@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Getter
 @Setter
@@ -14,7 +15,7 @@ import javax.persistence.*;
 @Table(name = "payment")
 @Entity
 public class Payment extends BaseEntity {
-    private int paid_price;
+    private BigDecimal paid_price;
     @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;
     @OneToOne

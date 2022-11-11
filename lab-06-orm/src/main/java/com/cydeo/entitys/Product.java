@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Getter
@@ -14,7 +15,7 @@ import java.util.List;
 @Entity
 public class Product extends BaseEntity {
     private String name;
-    private double price; //potential bug
+    private BigDecimal price; //potential bug
     private int quantity;
     private int remaining_quantity;
     @ManyToMany(fetch = FetchType.EAGER)

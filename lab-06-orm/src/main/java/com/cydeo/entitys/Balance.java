@@ -8,6 +8,7 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 
 @Getter
 @Setter
@@ -16,7 +17,7 @@ import javax.persistence.Table;
 @Entity
 
 public class Balance extends BaseEntity{
-    private double amount;
+    private BigDecimal amount;
     @OneToOne
     private Customer customer;
 

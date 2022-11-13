@@ -13,7 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "customer")
+//@Table(name = "customer")
 @Entity
 public class Customer extends BaseEntity{
 

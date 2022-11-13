@@ -18,16 +18,16 @@ import java.util.List;
 public class Customer extends BaseEntity{
 
     private String email;
-    private String first_name;
-    private String last_name;
-    private String user_name;
-    @OneToOne
-    private Balance balance;
-    @OneToMany
-    private List<Address> addresses;
-    @OneToMany
-    private List<Orders> orders;
-    @OneToMany
-    private List<Cart> carts;
+    private String firstName;
+    private String lastName;
+    private String userName;
+//    @OneToOne  the instructor builds the relations in the other tables hmmmm
+//    private Balance balance;
+//    @OneToMany
+//    private List<Address> addresses;
+//    @OneToMany
+//    private List<Orders> orders;
+//    @OneToMany
+//    private List<Cart> carts;
 
 }

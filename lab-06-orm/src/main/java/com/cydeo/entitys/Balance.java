@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "balance")
+//@Table(name = "balance")
 @Entity
 
 public class Balance extends BaseEntity{

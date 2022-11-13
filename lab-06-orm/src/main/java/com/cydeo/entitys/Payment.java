@@ -18,8 +18,8 @@ public class Payment extends BaseEntity {
     private BigDecimal paid_price;
     @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;
-    @OneToOne
-    private Orders orders;
+//    @OneToOne
+//    private Orders orders;
 
 
 

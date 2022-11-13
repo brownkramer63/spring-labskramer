@@ -16,8 +16,8 @@ import java.util.List;
 public class Product extends BaseEntity {
     private String name;
     private BigDecimal price; //potential bug
-    private int quantity;
-    private int remaining_quantity;
+    private Integer quantity;
+    private Integer remaining_quantity;
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name="product_category_rel",
             joinColumns = @JoinColumn(name="p_id"),

@@ -15,7 +15,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "category")
+//@Table(name = "category")
 @Entity
 public class Category extends BaseEntity{
     private String name;

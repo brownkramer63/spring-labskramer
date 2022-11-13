@@ -12,17 +12,17 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "cart")
+//@Table(name = "cart")
 @Entity
 public class Cart extends BaseEntity{
     @Enumerated(EnumType.STRING)
     private CartState cartState;
-    @OneToMany
-    private List<CartItem> cartItems;
+//    @OneToMany
+//    private List<CartItem> cartItems;
     @ManyToOne
     private Customer customer;
     @ManyToOne
     private Discount discount;
-    @OneToOne
-    private Orders orders;
+//    @OneToOne
+//    private Orders orders;
 }

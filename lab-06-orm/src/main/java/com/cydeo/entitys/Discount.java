@@ -13,7 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "discount")
+//@Table(name = "discount")
 @Entity
 
 public class Discount extends BaseEntity{
@@ -21,7 +21,7 @@ public class Discount extends BaseEntity{
     @Enumerated(EnumType.STRING)
     private DiscountType discountType;
     private String name;
-    @OneToMany
-    private List<Cart> carts;
+//    @OneToMany
+//    private List<Cart> carts;
 
 }

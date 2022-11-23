@@ -1,7 +1,6 @@
 package com.cydeo.lab07ormqueries.entitys;
 
-
-import com.cydeo.enums.DiscountType;
+import com.cydeo.lab06orm.enums.DiscountType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,18 +10,13 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import java.math.BigDecimal;
 
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor
-//@Table(name = "discount")
-@Entity
-
-public class Discount extends BaseEntity{
+public class Discount extends BaseEntity {
+    private String name;
     private BigDecimal discount;
     @Enumerated(EnumType.STRING)
     private DiscountType discountType;
-    private String name;
-//    @OneToMany
-//    private List<Cart> carts;
-
 }

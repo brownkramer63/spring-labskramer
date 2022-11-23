@@ -10,12 +10,8 @@ import javax.persistence.MappedSuperclass;
 
 @Getter
 @Setter
-//to avoid area with @data we are using getter and setter
-//@NoArgsConstructor we dont need constructors as we arent instantiating anything
-//@AllArgsConstructor
-@MappedSuperclass //we want to use this class for parent child relation still
+@MappedSuperclass
 public class BaseEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

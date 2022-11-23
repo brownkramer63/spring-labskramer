@@ -1,6 +1,5 @@
 package com.cydeo.lab07ormqueries.entitys;
 
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,20 +12,17 @@ import java.math.BigDecimal;
 
 @Getter
 @Setter
+@Entity
 @NoArgsConstructor
 @Table(name = "orders")
-@Entity
-public class Orders extends BaseEntity {
+public class Order extends BaseEntity{
     private BigDecimal paidPrice;
     private BigDecimal totalPrice;
     @ManyToOne
     private Customer customer;
     @OneToOne
     private Cart cart;
-   @OneToOne
+    @OneToOne
     private Payment payment;
-
-
-
 
 }

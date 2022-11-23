@@ -1,10 +1,13 @@
 package com.cydeo.lab07ormqueries.repository;
 
+import com.cydeo.lab07ormqueries.entitys.Order;
+import org.hibernate.metamodel.model.convert.spi.JpaAttributeConverter;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface OrderRepository {
+public interface OrderRepository extends JpaRepository<Order,Long> {
     //Write a derived query to get top 5 orders by order by total price desc
     //Write a derived query to get all orders by customer email
     //Write a derived query to get all orders by specific payment method

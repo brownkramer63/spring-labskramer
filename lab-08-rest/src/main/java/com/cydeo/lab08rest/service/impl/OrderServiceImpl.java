@@ -1,6 +1,7 @@
 package com.cydeo.lab08rest.service.impl;
 
 import com.cydeo.lab08rest.dto.OrderDTO;
+import com.cydeo.lab08rest.enums.PaymentMethod;
 import com.cydeo.lab08rest.mapper.MapperUtil;
 import com.cydeo.lab08rest.repository.OrderRepository;
 import com.cydeo.lab08rest.service.OrderService;
@@ -28,6 +29,21 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderDTO updateOrder(OrderDTO orderDTO) {
+        return null;
+    }
+
+    @Override
+    public OrderDTO createOrder(OrderDTO orderDTO) {
+        return null;
+    }
+
+    @Override
+    public List<OrderDTO> retrieveOrderByPaymentMethod(PaymentMethod paymentMethod) {
+        return null;
+    }
+
+    @Override
+    public List<OrderDTO> retrieveOrderByEmail(String email) {
         return null;
     }
 }

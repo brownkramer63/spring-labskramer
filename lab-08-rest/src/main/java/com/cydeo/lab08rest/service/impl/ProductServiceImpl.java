@@ -30,8 +30,10 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductDTO updateProduct(Long productId, ProductDTO productDTO) {
-        return null;
+    public ProductDTO updateProduct( ProductDTO productDTO) {
+      Product product=productRepository.save(mapperUtil.convert(productDTO, new Product()));
+
+        return mapperUtil.convert(product, new ProductDTO());
     }
 
     @Override
@@ -64,6 +66,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductDTO> getProductsByCategory(Long categoryId) {
+        return null;
+    }
+
+    @Override
+    public ProductDTO retrieveProductByCategoryAndPrice(ProductDTO productDTO) {
         return null;
     }
 }

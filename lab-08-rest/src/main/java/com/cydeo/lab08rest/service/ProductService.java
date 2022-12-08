@@ -10,7 +10,7 @@ public interface ProductService {
 
     List<ProductDTO> getProducts();
 
-    ProductDTO updateProduct(Long productId, ProductDTO productDTO);
+    ProductDTO updateProduct( ProductDTO productDTO);
 
     ProductDTO createProduct(ProductDTO productDTO);
 
@@ -27,4 +27,5 @@ public interface ProductService {
     List<ProductDTO> getProductsByCategory(Long categoryId);
 
 
+  ProductDTO retrieveProductByCategoryAndPrice(ProductDTO productDTO);
 }

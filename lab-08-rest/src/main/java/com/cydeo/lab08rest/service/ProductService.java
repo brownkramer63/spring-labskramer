@@ -18,14 +18,13 @@ public interface ProductService {
 
     ProductDTO getProductByName(String name);
 
-    List<ProductDTO> getTop3Products();
+    List<ProductDTO> getTop3ProductsByPrice();
 
-    ProductDTO getProductByPrice(BigDecimal price);
+    public Integer countProductByPrice(BigDecimal price);
 
-    ProductDTO getProductByPriceAndQuantity(BigDecimal price, Integer quantity);
+    List<ProductDTO>  retrieveProductByPriceAndQuantity(BigDecimal price, Integer quantity);
 
-    List<ProductDTO> getProductsByCategory(Long categoryId);
+    List<ProductDTO> retrieveByCategory(Long categoryId);
 
-
-  ProductDTO retrieveProductByCategoryAndPrice(ProductDTO productDTO);
+    public List<ProductDTO> retrieveProductByCategoryAndPrice(List<Long> categoryList, BigDecimal price);
 }

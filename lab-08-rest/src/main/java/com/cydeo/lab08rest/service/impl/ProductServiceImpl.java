@@ -50,27 +50,33 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<ProductDTO> getTop3Products() {
+    public List<ProductDTO> getTop3ProductsByPrice() {
+        return productRepository.findTop3ByOrderByPriceDesc().stream().map(obj ->
+                mapperUtil.convert(obj, new ProductDTO())).collect(Collectors.toList());
+
+    }
+
+    @Override
+    public Integer countProductByPrice(BigDecimal price) {
+        return productRepository.countProductByPriceGreaterThan(price);
+    }
+
+    @Override
+    public List<ProductDTO> retrieveProductByPriceAndQuantity(BigDecimal price, Integer quantity) {
+    return productRepository.retrieveProductListGreaterThanPriceAndLowerThanRemainingQuantity(price,quantity)
+            .stream().map(product -> mapperUtil.convert(product, new ProductDTO())).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<ProductDTO> retrieveByCategory(Long categoryId) {
         return null;
     }
 
     @Override
-    public ProductDTO getProductByPrice(BigDecimal price) {
-        return null;
+    public List<ProductDTO> retrieveProductByCategoryAndPrice(List<Long> categoryList, BigDecimal price) {
+        return productRepository.retrieveProductListByCategory(categoryList,price).stream()
+                .map(product -> mapperUtil.convert(product, new ProductDTO())).collect(Collectors.toList());
     }
 
-    @Override
-    public ProductDTO getProductByPriceAndQuantity(BigDecimal price, Integer quantity) {
-        return null;
-    }
 
-    @Override
-    public List<ProductDTO> getProductsByCategory(Long categoryId) {
-        return null;
-    }
-
-    @Override
-    public ProductDTO retrieveProductByCategoryAndPrice(ProductDTO productDTO) {
-        return null;
-    }
 }

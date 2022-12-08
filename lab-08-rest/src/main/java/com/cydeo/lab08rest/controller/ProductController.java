@@ -9,16 +9,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/product")
-public class product_Controller {
+public class ProductController {
 
     private final ProductService productService;
 
 
-    public product_Controller(ProductService productService) {
+    public ProductController(ProductService productService) {
         this.productService = productService;
     }
 
@@ -74,7 +73,11 @@ public class product_Controller {
       return ResponseEntity.ok(new ResponseWrapper("products are retrieved",
               productService.retrieveProductByPriceAndQuantity(price,quantity),HttpStatus.OK));
     }
-
+    @GetMapping("/category/{id}")
+    public ResponseEntity<ResponseWrapper> retrieveByCategory(@PathVariable("id") Long categoryId){
+        return ResponseEntity.ok(new ResponseWrapper("Product are successfully retrieved"
+                , productService.retrieveByCategory(categoryId), HttpStatus.OK));
+    }
 
 
 }
